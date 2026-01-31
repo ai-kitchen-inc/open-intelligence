@@ -59,7 +59,7 @@ Start anywhere, but Chapter 1 is a good entry point. Each abstract summarizes th
 ---
 
 # Chapter Abstracts & Key Ideas
-These chapter abstracts capture the distilled engineering ideas without internal authoring prompts.
+These chapter abstracts capture the distilled engineering ideas.
 
 ## Chapter 1: The Attention Primitive
 **Abstract:** Attention replaces sequential processing with parallel relevance weighting, letting models connect distant concepts and scale context efficiently.
