@@ -164,6 +164,31 @@ Below are the distilled engineering ideas for each chapter. These act as the “
 
 ---
 
+# References (Harvard Style)
+1. Vaswani, A. et al. (2017) ‘Attention is all you need’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+2. Alammar, J. (2018) ‘The illustrated transformer’, *Blog post*.
+3. Devlin, J. et al. (2018) ‘BERT: Pre-training of deep bidirectional transformers for language understanding’, *arXiv preprint* arXiv:1810.04805.
+4. Brown, T.B. et al. (2020) ‘Language models are few-shot learners’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+5. Kaplan, J. et al. (2020) ‘Scaling laws for neural language models’, *arXiv preprint* arXiv:2001.08361.
+6. Hoffmann, J. et al. (2022) ‘Training compute-optimal large language models’, *arXiv preprint* arXiv:2203.15556.
+7. Touvron, H. et al. (2023) ‘LLaMA: Open and efficient foundation language models’, *arXiv preprint* arXiv:2302.13971.
+8. Su, J. et al. (2021) ‘RoFormer: Enhanced transformer with rotary position embedding’, *arXiv preprint* arXiv:2104.09864.
+9. Dao, T. et al. (2022) ‘FlashAttention: Fast and memory-efficient exact attention with IO-awareness’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+10. Lewis, P. et al. (2020) ‘Retrieval-augmented generation for knowledge-intensive NLP tasks’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+11. Ouyang, L. et al. (2022) ‘Training language models to follow instructions with human feedback’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+12. Rafailov, R. et al. (2023) ‘Direct preference optimization: Your language model is secretly a reward model’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+13. Wei, J. et al. (2022) ‘Chain-of-thought prompting elicits reasoning in large language models’, *Advances in Neural Information Processing Systems (NeurIPS)*.
+14. Yao, S. et al. (2023) ‘ReAct: Synergizing reasoning and acting in language models’, *International Conference on Learning Representations (ICLR)*.
+15. Guo, D. et al. (2025) ‘DeepSeek-R1: Incentivizing reasoning capability in LLMs via reinforcement learning’, *Technical report*.
+16. Yang, A. et al. (2025) ‘Qwen3 technical report’, *Technical report*.
+17. Shazeer, N. et al. (2017) ‘Outrageously large neural networks: The sparsely-gated mixture-of-experts layer’, *International Conference on Learning Representations (ICLR)*.
+18. Fedus, W. et al. (2021) ‘Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity’, *Journal of Machine Learning Research*.
+19. Mistral AI (2024) ‘Mixtral of experts’, *Technical report*.
+20. Komatsuzaki, A. et al. (2022) ‘Sparse upcycling: Training mixture-of-experts from dense checkpoints’, *International Conference on Learning Representations (ICLR)*.
+21. Huh, M. et al. (2024) ‘The platonic representation hypothesis’, *arXiv preprint* arXiv:2405.07987.
+
+---
+
 # Next Steps
 If you want, the next milestone is **Layer 3**: full chapter drafts starting with *Chapter 1: The Attention Primitive*.
 
