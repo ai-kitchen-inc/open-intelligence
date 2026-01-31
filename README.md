@@ -2,23 +2,20 @@
 **Subtitle:** A Conceptual Guide to the Primitives of Large Language Models
 
 ## Purpose
-This repository is a long-lived, citation-friendly home for the **Primitives of Intelligence**—the minimal building blocks that make modern AI work. The goal is to make this the simplest, clearest, and most referenced guide for anyone who wants to understand *how* AI works without needing a PhD or heavy jargon.
+This repository is a clear, citation-friendly guide to the **Primitives of Intelligence**—the minimal building blocks that make modern AI work. It is written for readers who want to understand *how* AI works without heavy jargon.
 
 We aim to create a **legacy repository**: a clear historical map of how AI techniques evolved, why they worked, and how they connect.
 
-## Design Principles (How This Repo Becomes a Classic)
+## Design Principles
 1. **Plain English First**: Every concept is explained like a human would teach another human.
-2. **Layered Learning**: Each chapter has three layers:
-   - *Layer 1:* The big idea (1 page).
-   - *Layer 2:* The engineering logic (3–5 pages).
-   - *Layer 3:* The deep dive with references (optional).
+2. **Layered Learning**: Each chapter moves from intuition to engineering to references.
 3. **Concepts > APIs**: We focus on enduring ideas, not fleeting frameworks.
 4. **Minimalism**: One chapter, one primitive. No clutter.
 5. **Traceable Lineage**: Each chapter links to the foundational papers that changed the field.
 
 ---
 
-# Repo Structure (Planned)
+# Repo Structure
 ```
 /README.md                → The front door (this file)
 /chapters/                → The book, one chapter per file
@@ -35,132 +32,118 @@ We aim to create a **legacy repository**: a clear historical map of how AI techn
 
 ---
 
-# Book Outline
-## LAYER 1: THE META BOOK OUTLINE
-**Book Title:** *The Architecture of Intelligence*  
-**Subtitle:** *A Conceptual Guide to the Primitives of Large Language Models*
+# Read the Chapters
+Start anywhere, but Chapter 1 is a good entry point. Each abstract summarizes the chapter’s focus and key ideas.
 
-1. **The Attention Primitive (Context)**  
-   *Intelligence requires identifying relevant relationships within data, regardless of distance.*
+1. **[The Attention Primitive (Context)](chapters/01_attention.md)**  
+   *Attention replaces the sequential bottleneck with parallel relevance weighting across tokens. It is a Q/K/V look-up mechanism that lets the model link distant ideas and scale context efficiently (e.g., FlashAttention).*
 
-2. **The Compression Principle (Capacity)**  
-   *Intelligence is the result of compressing vast data into efficient prediction rules.*
+2. **[The Compression Principle (Capacity)](chapters/02_compression.md)**  
+   *Prediction drives understanding: models act as lossy compressors of relationships rather than memorizing text. Scaling laws and data/parameter ratios (e.g., Chinchilla) explain how capacity and data shape performance.*
 
-3. **The Alignment Interface (Control)**  
-   *Raw intelligence is chaotic; usefulness requires a mechanism to shape behavior toward human intent.*
+3. **[The Alignment Interface (Control)](chapters/03_alignment.md)**  
+   *Alignment turns base completion models into helpful systems by injecting preference signals. It spans supervised instruction, RLHF reward modeling, and direct preference optimization to steer behavior.*
 
-4. **The Verification Loop (Reasoning)**  
-   *Intelligence is not just retrieval; it is an iterative process of generating, critiquing, and refining thought.*
+4. **[The Verification Loop (Reasoning)](chapters/04_verification.md)**  
+   *Reasoning emerges from deliberate, iterative verification rather than one-shot answers. Inference-time compute, self-correction, and synthetic reasoning data improve correctness and reliability.*
 
-5. **The Routing Architecture (Efficiency)**  
-   *Scalable intelligence requires conditional computation—activating only the necessary neurons for a task.*
+5. **[The Routing Architecture (Efficiency)](chapters/05_routing.md)**  
+   *Mixture-of-Experts addresses dense compute waste by routing tokens to specialized experts. Conditional computation yields large capacity with lower inference cost.*
 
-6. **The Tool-Use Framework (Agency)**  
-   *Intelligence extends beyond the internal model by interfacing with external environments and databases.*
+6. **[The Tool-Use Framework (Agency)](chapters/06_tools.md)**  
+   *Tool use expands models beyond parametric memory via retrieval and actions. RAG supplies external context while ReAct-style loops teach when to call APIs and interpret observations.*
 
-7. **The Latent Representation (Universality)**  
-   *Convergent intelligence forms a shared, high-dimensional map of reality.*
+7. **[The Latent Representation (Universality)](chapters/07_latent_space.md)**  
+   *Latent space organizes concepts as directions in high-dimensional space. Monosemanticity and the Platonic hypothesis suggest convergent internal maps across large models.*
 
 ---
 
-# Chapter Inputs (Dense Points & Prompts)
-Below are the distilled engineering ideas for each chapter. These act as the “truth source” for the writing process.
+# Chapter Abstracts & Key Ideas
+These chapter abstracts capture the distilled engineering ideas without internal authoring prompts.
 
 ## Chapter 1: The Attention Primitive
-**Papers:** *Attention Is All You Need, The Illustrated Transformer, RoFormer, FlashAttention.*
+**Abstract:** Attention replaces sequential processing with parallel relevance weighting, letting models connect distant concepts and scale context efficiently.
 
-**Dense Points:**
-- **Sequential Bottleneck:** RNNs processed data linearly. Long context was lost.
-- **Parallelization as Key:** Transformers process the full sequence at once, unlocking GPU efficiency.
-- **Relevance Weighting:** Attention calculates relevance between every pair of tokens.
-- **Look-Up Mechanism (Q/K/V):** A database query analogy.
-- **Context Window:** The model’s RAM. FlashAttention optimizes memory IO to scale it.
-
-**Generator Prompt (Plain English):**
-> Explain the Attention Mechanism as the foundational primitive of modern AI. Contrast it with the old sequential way of reading. Describe the architecture as a massive relevance look-up machine. Use the filing system analogy (Query/Key/Value). Emphasize that intelligence here is the ability to link distant concepts.
+**Key Ideas:**
+- **Sequential Bottleneck:** RNNs processed data linearly, losing long-range context.
+- **Parallelization as Key:** Transformers process full sequences at once, enabling GPU efficiency.
+- **Relevance Weighting:** Attention scores relationships between every pair of tokens.
+- **Look-Up Mechanism (Q/K/V):** Query-Key-Value acts like a database lookup.
+- **Context Window:** The model’s working memory; FlashAttention improves memory IO.
 
 ---
 
 ## Chapter 2: The Compression Principle
-**Papers:** *GPT-3, Scaling Laws, Chinchilla, LLaMA.*
+**Abstract:** Intelligence emerges from compressing vast data into predictive rules; scaling laws and data/parameter balance reveal how capacity drives performance.
 
-**Dense Points:**
-- **Prediction is Understanding:** Predicting text requires modeling logic.
-- **Lossy Compression:** The model is a “zip file” of relationships, not literal text.
+**Key Ideas:**
+- **Prediction is Understanding:** Prediction requires modeling underlying structure.
+- **Lossy Compression:** Models store relationships, not verbatim text.
 - **Scaling Laws:** Performance scales with data/compute in a power-law.
-- **Token-to-Parameter Ratio:** Chinchilla shows optimal data-to-model size.
-
-**Generator Prompt:**
-> Explain generalization via compression. Training is not memorizing but discovering efficient prediction rules. Scaling laws show more compute/data sharpens the internal world model, like increasing resolution.
+- **Token-to-Parameter Ratio:** Chinchilla highlights optimal data-to-model size.
 
 ---
 
 ## Chapter 3: The Alignment Interface
-**Papers:** *InstructGPT, DPO, The Smol Training Playbook.*
+**Abstract:** Alignment turns raw completion engines into helpful systems by injecting human preference signals through instruction and preference optimization.
 
-**Dense Points:**
+**Key Ideas:**
 - **Base vs. Instruct:** Base models complete; instruct models follow tasks.
-- **Preference Signal:** Helpful behavior requires human preference signals.
-- **RLHF:** Reward models grade outputs.
-- **DPO:** Directly pushes the model toward preferred answers.
-
-**Generator Prompt:**
-> Explain alignment as engineering obedience. Show the shift from examples (SFT) to preferences (RLHF/DPO). DPO aligns the probability distribution directly without a reward-model middleman.
+- **Preference Signal:** Helpfulness requires human preference data.
+- **RLHF:** Reward models score outputs.
+- **DPO:** Directly optimizes toward preferred answers.
 
 ---
 
 ## Chapter 4: The Verification Loop
-**Papers:** *Chain-of-Thought, DeepSeek-R1, Textbooks Are All You Need.*
+**Abstract:** Reasoning improves when models are encouraged to verify and refine answers, using additional inference-time compute and self-correction.
 
-**Dense Points:**
-- **System 1 vs. System 2:** Instant answers vs. deliberate reasoning.
-- **Inference-Time Compute:** More thinking time improves reasoning.
-- **Self-Correction:** R1 shows models learn to verify when incentivized.
-- **Synthetic Data:** Models can generate textbook-quality reasoning data.
-
-**Generator Prompt:**
-> Explain reasoning as inference-time computation. Contrast fast one-shot output with scratchpad thinking. DeepSeek-R1 shows that reasoning emerges when correctness is rewarded.
+**Key Ideas:**
+- **System 1 vs. System 2:** Fast answers vs. deliberate reasoning.
+- **Inference-Time Compute:** More thinking time improves outcomes.
+- **Self-Correction:** Models can verify when incentivized.
+- **Synthetic Data:** Models can generate high-quality reasoning data.
 
 ---
 
 ## Chapter 5: The Routing Architecture
-**Papers:** *MoE (Shazeer), Switch Transformers, Mixtral, Qwen3.*
+**Abstract:** Mixture-of-Experts increases capacity efficiently by routing tokens to specialized sub-models instead of activating all parameters.
 
-**Dense Points:**
-- **Dense Compute Waste:** Standard models activate everything every time.
+**Key Ideas:**
+- **Dense Compute Waste:** Standard models activate all parameters every time.
 - **Conditional Computation:** Only some experts activate per token.
-- **Router:** A traffic controller to select experts.
-- **Economic Efficiency:** Big capacity with cheap inference.
-
-**Generator Prompt:**
-> Explain Mixture of Experts as a scalability fix. Use the organization analogy: not everyone attends every meeting. The router delegates to specialists.
+- **Router:** A controller selects experts.
+- **Economic Efficiency:** Large capacity with cheaper inference.
 
 ---
 
 ## Chapter 6: The Tool-Use Framework
-**Papers:** *RAG, ReAct, Toolformer.*
+**Abstract:** Tool use extends model capability with retrieval and actions, enabling open-book reasoning and interaction with external systems.
 
-**Dense Points:**
+**Key Ideas:**
 - **Parametric vs. Non-Parametric Memory:** Weights vs. retrieval.
 - **ReAct Loop:** Thought → Action → Observation → Thought.
-- **API Calls:** Models learn when to call tools.
-
-**Generator Prompt:**
-> Explain agency as a shift from closed-book to open-book. RAG gives access to external memory. ReAct turns models into agents that interact and adapt.
+- **API Calls:** Models learn when to use tools.
 
 ---
 
 ## Chapter 7: The Latent Representation
-**Papers:** *Scaling Monosemanticity, The Platonic Representation.*
+**Abstract:** Concepts live as directions in a high-dimensional latent space; evidence suggests convergence toward shared internal maps.
 
-**Dense Points:**
-- **Black Box Problem:** We built it but don’t fully understand it.
-- **Linear Representation:** Concepts are directions in high-dimensional space.
+**Key Ideas:**
+- **Black Box Problem:** We build models without full interpretability.
+- **Linear Representation:** Concepts can be linear directions.
 - **Monosemanticity:** Some neurons map to single concepts.
-- **Platonic Hypothesis:** Large models converge on the same internal map.
+- **Platonic Hypothesis:** Large models converge on similar internal maps.
 
-**Generator Prompt:**
-> Explain latent space as a map of concepts. The Platonic hypothesis says all sufficiently trained models discover the same internal structure of reality.
+---
+
+# How to Contribute
+This project values clarity over hype. If you want to contribute:
+- Teach one idea **well**.
+- Use analogies sparingly and precisely.
+- Cite foundational papers.
+- Keep the writing timeless.
 
 ---
 
@@ -186,17 +169,3 @@ Below are the distilled engineering ideas for each chapter. These act as the “
 19. Mistral AI (2024) ‘Mixtral of experts’, *Technical report*.
 20. Komatsuzaki, A. et al. (2022) ‘Sparse upcycling: Training mixture-of-experts from dense checkpoints’, *International Conference on Learning Representations (ICLR)*.
 21. Huh, M. et al. (2024) ‘The platonic representation hypothesis’, *arXiv preprint* arXiv:2405.07987.
-
----
-
-# Next Steps
-If you want, the next milestone is **Layer 3**: full chapter drafts starting with *Chapter 1: The Attention Primitive*.
-
----
-
-# Contribution Philosophy
-This project values clarity over hype. If you want to contribute:
-- Teach one idea **well**.
-- Use analogies sparingly and precisely.
-- Cite foundational papers.
-- Keep the writing timeless.
