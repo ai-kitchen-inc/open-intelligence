@@ -40,25 +40,25 @@ We aim to create a **legacy repository**: a clear historical map of how AI techn
 **Book Title:** *The Architecture of Intelligence*  
 **Subtitle:** *A Conceptual Guide to the Primitives of Large Language Models*
 
-1. **The Attention Primitive (Context)**  
+1. **[The Attention Primitive (Context)](chapters/01_attention.md)**  
    *Intelligence requires identifying relevant relationships within data, regardless of distance.*
 
-2. **The Compression Principle (Capacity)**  
+2. **[The Compression Principle (Capacity)](chapters/02_compression.md)**  
    *Intelligence is the result of compressing vast data into efficient prediction rules.*
 
-3. **The Alignment Interface (Control)**  
+3. **[The Alignment Interface (Control)](chapters/03_alignment.md)**  
    *Raw intelligence is chaotic; usefulness requires a mechanism to shape behavior toward human intent.*
 
-4. **The Verification Loop (Reasoning)**  
+4. **[The Verification Loop (Reasoning)](chapters/04_verification.md)**  
    *Intelligence is not just retrieval; it is an iterative process of generating, critiquing, and refining thought.*
 
-5. **The Routing Architecture (Efficiency)**  
+5. **[The Routing Architecture (Efficiency)](chapters/05_routing.md)**  
    *Scalable intelligence requires conditional computation—activating only the necessary neurons for a task.*
 
-6. **The Tool-Use Framework (Agency)**  
+6. **[The Tool-Use Framework (Agency)](chapters/06_tools.md)**  
    *Intelligence extends beyond the internal model by interfacing with external environments and databases.*
 
-7. **The Latent Representation (Universality)**  
+7. **[The Latent Representation (Universality)](chapters/07_latent_space.md)**  
    *Convergent intelligence forms a shared, high-dimensional map of reality.*
 
 ---
@@ -186,11 +186,6 @@ Below are the distilled engineering ideas for each chapter. These act as the “
 19. Mistral AI (2024) ‘Mixtral of experts’, *Technical report*.
 20. Komatsuzaki, A. et al. (2022) ‘Sparse upcycling: Training mixture-of-experts from dense checkpoints’, *International Conference on Learning Representations (ICLR)*.
 21. Huh, M. et al. (2024) ‘The platonic representation hypothesis’, *arXiv preprint* arXiv:2405.07987.
-
----
-
-# Next Steps
-If you want, the next milestone is **Layer 3**: full chapter drafts starting with *Chapter 1: The Attention Primitive*.
 
 ---
 
